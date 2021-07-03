@@ -1,63 +1,62 @@
 <div class="container-fluid">
 
-    <div class="row">
+    <div class="row d-flex align-items-center">
+        <div class="col-md-6" id="bg-img"></div>
 
-        <div class="col-md-6" id="img-bg"></div>
+        <div class="col-md-6">
 
-        <div class="col-md-5 mb-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <h1 class="text-center mb-4">Cadastrar</h1>
 
-            <div class="row d-flex justy-content-center">
-                <div class="col-md-10">
+                        <div class="form-group">
+                            <label class="pl-2" for="nome">Nome</label>
+                            <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome">
+                        </div>
 
-                    <h1 class="text-center">Cadastro</h1>
+                        <div class="form-group">
+                            <label class="pl-2" for="usuario">Usuário</label>
+                            <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario" id="usuario"
+                                placeholder="Digite seu usuário">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
+                        <div class="form-group">
+                            <label class="pl-2" for="foto">Link da Foto</label>
+                            <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pl-2" for="senha">Senha</label>
+                            <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha"
+                                placeholder="Digite sua senha">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pl-2" for="confirmSenha">Confirmar Senha</label>
+                            <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmSenha" id="confirmSenha"
+                                placeholder="Confirme sua senha">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="pl-2" for="tipo">Tipo</label>
+                            <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
+                                <option>Selecione o tipo de usuário</option>
+                                <option value="normal">Normal</option>
+                                <option value="adm">Adiministrador</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-4">
+                            <button type="submit" class="btn btn-danger mr-4">Cancelar</button>
+                            <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
+                        </div>
+
+                        <hr class="my-4">
+                        <p class="text-center">Já possui uma conta? <a routerLink="/entrar">Faça login</a></p>
                     </div>
-
-                    <div class="form-group">
-                        <label for="usuario">Usuário</label>
-                        <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="foto">Link da Foto</label>
-                        <input class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha" placeholder="Seu senha">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="confirmesenha">Confirmar Senha</label>
-                        <input class="form-control" type="password" name="confirmesenha" id="confirmesenha"
-                            placeholder="Confirme sua senha">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="tipo">Tipo de Usuário</label>
-                        <select class="form-control" name="tipo" id="tipo">
-                            <option>Selecione um tipo de usuário:</option>
-                            <option value="normal">Normal</option>
-                            <option value="adm">Administrador</option>
-                        </select>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-danger mr-4" routerLink= '/entrar'>Cancelar</button>
-                        <button type-="submit" class="btn btn-success">Cadastrar</button>
-
-                    </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>

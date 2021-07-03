@@ -1,9 +1,18 @@
-#img-bg{
-    background-image: url('https://i.imgur.com/pEUPTDj.png');
-   
+#bg-img {
+    background-image: url(https://images.pexels.com/photos/92901/pexels-photo-92901.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+
     min-height: 100vh;
-   
-    background-position: center;
-    background-repeat: no-repeat;
+
+    background-position: -80px;
     background-size: cover;
-   }
+    background-repeat: no-repeat;
+}
+
+.card {
+    background-color: #e1e5ed30;
+    border-radius: 30px;
+    padding: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 3px 3px 1px 0px #00000060;
+}
